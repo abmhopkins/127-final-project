@@ -13,7 +13,7 @@ public class leftTunnelAlive {
     private Button firstChoice;
     private Button secondChoice;
 
-    private  leftTunnelAlive(CanvasWindow canvas){
+    leftTunnelAlive(CanvasWindow canvas){
         this.canvas = canvas;
         this.CANVAS_WIDTH = canvas.getWidth();
         this.CANVAS_HEIGHT = canvas.getHeight();
@@ -24,6 +24,28 @@ public class leftTunnelAlive {
                 "down from the ceiling. Do you want to cross the bridge or go up the ladder?",
                 "Across the Bridge",
                 "Up the Ladder" );
+        firstChoice.onClick(this::bridge);
+        secondChoice.onClick(this::ladder);
+    }
+
+    private void bridge(){
+        canvasHelper("You cross the rickety old rope bridge carefully and make it to the other side. " +
+                        "Now on the other side, you see that the cave splits again. " +
+                        "You can either take the left tunnel or the right tunnel.",
+                "Left Tunnel",
+                "Right Tunnel" );
+//        firstChoice.onClick();
+//        secondChoice.onClick();
+    }
+
+    private void ladder(){
+        canvasHelper("You climb the ladder and find yourself on the edge of a sewer pipe. \n" +
+                        "This is a good start, you must be close to the surface! The sewer water is flowing from " +
+                        "left to right, do you want to go with the flow or against the flow?" ,
+                "With the Flow",
+                "Against the Flow");
+//        firstChoice.onClick();
+//        secondChoice.onClick();
     }
 
     public void canvasHelper(String storyText, String choice1, String choice2){
