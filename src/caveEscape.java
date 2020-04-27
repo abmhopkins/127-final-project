@@ -15,6 +15,8 @@ public class caveEscape {
     private Button firstChoice;
     private Button secondChoice;
 
+    private leftTunnelAlive leftTunnel;
+
 
     private GraphicsText story;
 
@@ -26,6 +28,8 @@ public class caveEscape {
         startGameButton.setCenter(CANVAS_WIDTH*0.5,CANVAS_HEIGHT*0.5);
         startGameButton.onClick(this::startGame);
         canvas.add(startGameButton);
+
+        leftTunnel = new leftTunnelAlive(canvas);
         }
 
     public void startGame(){
@@ -33,18 +37,36 @@ public class caveEscape {
                 "Feel Around",
                 "Do Nothing");
         firstChoice.onClick(this::feelAround);
-
+        secondChoice.onClick(this::doNothing);
     }
 
-    public void feelAround(){
+    private void feelAround(){
         canvasHelper("You feel the ground around you. You find a backpack and a flashlight. " +
                 "Do you want to turn on the flashlight or check your backpack?",
                 "Flashlight",
                 "Backpack");
-
+        firstChoice.onClick(this::flashlight);
+//        secondChoice.onClick();
     }
 
-    public void canvasHelper(String storyText, String choice1, String choice2){
+    public void doNothing(){
+        canvasHelper("You sit there on the cold dark floor and do nothing. That wasn't much fun was it?" +
+                        "GAME OVER",
+                "Restart",
+                "null");
+        firstChoice.onClick(this::startGame);
+    }
+
+    private void flashlight(){
+        canvasHelper("Your fingers stumble over the flashlight searching for the button. " +
+                "You find it and the path in front of you is illuminated. There are two tunnels, a left " +
+                "tunnel and a right tunnel",
+                "Left Tunnel",
+                "Right Tunnel");
+        firstChoice.onClick(() -> leftTunnel.leftTunnel());
+    }
+
+    private void canvasHelper(String storyText, String choice1, String choice2){
         canvas.removeAll();
         story = new GraphicsText(storyText);
         story.setCenter(CANVAS_WIDTH*0.5, CANVAS_HEIGHT*0.33);
@@ -53,10 +75,11 @@ public class caveEscape {
         firstChoice = new Button(choice1);
         firstChoice.setCenter(CANVAS_WIDTH*0.5,CANVAS_HEIGHT*0.6);
         canvas.add(firstChoice);
-
-        secondChoice = new Button(choice2);
-        secondChoice.setCenter(CANVAS_WIDTH*0.5,CANVAS_HEIGHT*0.7);
-        canvas.add(secondChoice);
+        if (!choice2.equals("null")) {
+            secondChoice = new Button(choice2);
+            secondChoice.setCenter(CANVAS_WIDTH * 0.5, CANVAS_HEIGHT * 0.7);
+            canvas.add(secondChoice);
+        }
     }
 
 
