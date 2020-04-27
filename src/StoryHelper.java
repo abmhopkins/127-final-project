@@ -23,6 +23,7 @@ public class StoryHelper {
     }
 
     public void canvasHelper(String storyText, String choice1, String choice2){
+        // TODO add capabilities that change the background - most likely as another parameter
         canvas.removeAll();
 
         wrapText(storyText);
