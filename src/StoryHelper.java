@@ -1,7 +1,10 @@
 import comp127graphics.CanvasWindow;
+import comp127graphics.FontStyle;
 import comp127graphics.GraphicsText;
+import comp127graphics.Image;
 import comp127graphics.ui.Button;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -10,7 +13,7 @@ public class StoryHelper {
 
     private final int CANVAS_WIDTH;
     private final int CANVAS_HEIGHT;
-    private final int LENGTH_WORDS = 18;
+    private final int LENGTH_WORDS = 15;
 
     private CanvasWindow canvas;
     public Button firstChoice;
@@ -22,9 +25,14 @@ public class StoryHelper {
         this.CANVAS_HEIGHT = canvas.getHeight();
     }
 
-    public void canvasHelper(String storyText, String choice1, String choice2){
+    public void canvasHelper(String storyText, String choice1, String choice2, String imageName){
         // TODO add capabilities that change the background - most likely as another parameter
         canvas.removeAll();
+        if(!imageName.equals("null")) {
+            Image image = new Image(0, 0);
+            image.setImagePath(imageName + ".png");
+            canvas.add(image);
+        }
 
         wrapText(storyText);
 
@@ -56,6 +64,8 @@ public class StoryHelper {
                 }
                 GraphicsText label = new GraphicsText(story);
                 label.setCenter(CANVAS_WIDTH * 0.5, y);
+                label.setFont(FontStyle.BOLD, 14);
+                label.setFillColor(Color.RED);
                 canvas.add(label);
             }
         } else{
