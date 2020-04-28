@@ -4,10 +4,12 @@ public class StartGame {
 
     private StoryHelper storyHelper;
     private LeftTunnelAlive leftTunnel;
+    private RightTunnelAlive rightTunnel; //Amrit
 
     public StartGame(CanvasWindow canvas){
         this.storyHelper = new StoryHelper(canvas);
         leftTunnel = new LeftTunnelAlive(canvas);
+        rightTunnel = new RightTunnelAlive(canvas); //Amrit
     }
 
     public void startGame(){
@@ -49,6 +51,7 @@ public class StartGame {
                 "Right Tunnel",
                 "null");
         //TODO image
-        storyHelper.firstChoice.onClick(() -> leftTunnel.leftTunnel());
+        storyHelper.firstChoice.onClick(leftTunnel::leftTunnel);
+        storyHelper.secondChoice.onClick(rightTunnel::rightTunnel);
     }
 }
