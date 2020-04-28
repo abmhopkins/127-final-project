@@ -47,7 +47,7 @@ public class CaveEscape {
 
     public void doNothing(){
         storyHelper.canvasHelper("You sit there on the cold dark floor and do nothing. That wasn't much fun was it?" +
-                        "GAME OVER",
+                        " GAME OVER",
                 "Restart",
                 "null");
         storyHelper.firstChoice.onClick(this::startGame);
