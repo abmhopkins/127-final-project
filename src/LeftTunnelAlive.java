@@ -25,8 +25,109 @@ public class LeftTunnelAlive {
                         "You can either take the left tunnel or the right tunnel.",
                 "Left Tunnel",
                 "Right Tunnel");
-//        firstChoice.onClick();
-//        secondChoice.onClick();
+        storyHelper.firstChoice.onClick(this::leftTunnelBridge);
+        storyHelper.secondChoice.onClick(this::rightTunnelBridge);
+    }
+
+    private void leftTunnelBridge(){
+        storyHelper.canvasHelper("You start heading down the tunnel to your left when a glint catches " +
+                        "your eye. You head over to examine it some closer and see a little piece of gold lying " +
+                        "on the floor. You shine your light and see another one not too far ahead. Do you ignore " +
+                        "the trail or follow it?",
+                "Ignore It",
+                "Follow It");
+        storyHelper.firstChoice.onClick(this::ignoreIt);
+        storyHelper.secondChoice.onClick(this::followIt);
+    }
+
+    private void rightTunnelBridge(){
+        storyHelper.canvasHelper("You head down the tunnel on your right. Your flashlight begins to " +
+                        "flicker and you briefly can't see your surroundings. You tumble down a hole, bumping " +
+                        "your head on the way down. You awake surrounded by rats, who appear to be worshiping you. " +
+                        "You live out the rest of your days as a rat monarch. GAME OVER",
+                "Restart",
+                "null");
+        restart();
+    }
+
+    private void ignoreIt(){
+        storyHelper.canvasHelper("You ignore the gold pieces. They were probably fake anyway. " +
+                        "You keep walking in the cave until you stop dead in your tracks. In front of you, " +
+                        "you make out what appears to a massive grizzly bear. How did that get down here? " +
+                        "You can either run past it or hide until it goes away.",
+                "Run",
+                "Hide");
+        storyHelper.firstChoice.onClick(this::run);
+        storyHelper.secondChoice.onClick(this::hide);
+    }
+
+    private void followIt(){
+        storyHelper.canvasHelper("You decide to follow the pieces of gold, picking them up as you go. " +
+                        "The pieces lead you to a section of the cave that you never would have stumbled onto. " +
+                        "You head down this new tunnel and come out into a room of treasure. You are immediately " +
+                        "consumed by greed and a desire to remain with your treasure forever. GAME OVER",
+                "Restart",
+                "null");
+        restart();
+    }
+
+    private void run(){
+        storyHelper.canvasHelper("You decide to try and run past the bear. " +
+                        "This idea sounded better in your head. You reach the other side of the cavern but " +
+                        "the bear is hot on your heels. It catches you. GAME OVER",
+                "Restart",
+                "null");
+        restart();
+    }
+
+    private void hide(){
+        storyHelper.canvasHelper("You hide behind a rock and wait for the bear to move on. " +
+                        "After about 20 minutes it scampers the way you just came and out of sight. " +
+                        "You move to the end of the cavern. You see a light up ahead of you or you can " +
+                        "head towards a darker part of the cave.",
+                "Light",
+                "Dark");
+        storyHelper.firstChoice.onClick(this::light);
+        storyHelper.secondChoice.onClick(this::dark);
+    }
+
+    private void light(){
+        storyHelper.canvasHelper("You break into a jog as you think you are close to the exit. " +
+                        "You think you can hear the sound of the ocean. You reach a dead end. Hanging from the " +
+                        "ceiling is an old miner's light. You break down and cry, exhausted. GAME OVER",
+                "Restart",
+                "null");
+        restart();
+    }
+
+    private void dark(){
+        storyHelper.canvasHelper("Interesting choice. \"Head towards the dark.\" Never heard that before. " +
+                        "Maybe it's good advice though. You turn a corner and see the outside world for the " +
+                        "first time. At the end of the cave opening is a rope. Do you want to climb up or down?",
+                "Climb Up",
+                "Climb Down");
+        storyHelper.firstChoice.onClick(this::climbUp);
+        storyHelper.secondChoice.onClick(this::climbDown);
+    }
+
+    private void climbUp(){
+        storyHelper.canvasHelper("You start to climb up the rope. It clearly has not been used for a " +
+                        "long time and you see it begin to fray under your weight. Fearing for your life, you " +
+                        "scramble up the rest of the rope and pull yourself onto level ground. You look around " +
+                        "and recognize the view. You go for runs here sometimes, you know your way home. YOU WIN",
+                "Restart",
+                "null");
+        restart();
+    }
+
+    private void climbDown(){
+        storyHelper.canvasHelper("You start to repel down. About 10 meters down, your feet no longer " +
+                        "feel the rope. You look down and see that the rope ends well before the ground does. " +
+                        "Using one last push of energy you try to climb up the rope. " +
+                        "You aren't strong enough. GAME OVER",
+                "Restart",
+                "null");
+        restart();
     }
 
     private void ladder(){
