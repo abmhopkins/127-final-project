@@ -34,8 +34,7 @@ public class StartGame {
     }
 
     public void doNothing(){
-        storyHelper.canvasHelper("You sit there on the cold dark floor and do nothing. That wasn't much fun was it?" +
-                        " GAME OVER",
+        storyHelper.canvasHelper("You sit there on the cold dark floor and do nothing. That wasn't much fun was it?",
                 "Restart",
                 "null",
                 "null");
