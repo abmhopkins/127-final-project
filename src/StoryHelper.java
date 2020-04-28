@@ -10,7 +10,7 @@ public class StoryHelper {
 
     private final int CANVAS_WIDTH;
     private final int CANVAS_HEIGHT;
-    private final int LENGTH_WORDS = 20;
+    private final int LENGTH_WORDS = 18;
 
     private CanvasWindow canvas;
     public Button firstChoice;
@@ -28,13 +28,17 @@ public class StoryHelper {
 
         wrapText(storyText);
 
-        firstChoice = new Button(choice1);
-        firstChoice.setCenter(CANVAS_WIDTH*0.5,CANVAS_HEIGHT*0.6);
-        canvas.add(firstChoice);
+        if(!choice1.equals("null")) {
+            firstChoice = new Button(choice1);
+            firstChoice.setCenter(CANVAS_WIDTH * 0.5, CANVAS_HEIGHT * 0.6);
+            canvas.add(firstChoice);
+        }
 
-        secondChoice = new Button(choice2);
-        secondChoice.setCenter(CANVAS_WIDTH*0.5,CANVAS_HEIGHT*0.7);
-        canvas.add(secondChoice);
+        if(!choice2.equals("null")) {
+            secondChoice = new Button(choice2);
+            secondChoice.setCenter(CANVAS_WIDTH * 0.5, CANVAS_HEIGHT * 0.7);
+            canvas.add(secondChoice);
+        }
     }
 
     public void wrapText(String text){
