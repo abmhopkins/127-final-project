@@ -1,4 +1,5 @@
 import comp127graphics.CanvasWindow;
+import comp127graphics.Image;
 
 public class LeftTunnelAlive {
 
@@ -14,7 +15,10 @@ public class LeftTunnelAlive {
         storyHelper.canvasHelper("You choose the left tunnel. Up ahead you see a rope bridge and a rope ladder hanging " +
                 "down from the ceiling. Do you want to cross the bridge or go up the ladder?",
                 "Across the Bridge",
-                "Up the Ladder" );
+                "Up the Ladder",
+                "cave");
+
+
         storyHelper.firstChoice.onClick(this::bridge);
         storyHelper.secondChoice.onClick(this::ladder);
     }
@@ -24,7 +28,9 @@ public class LeftTunnelAlive {
                         "Now on the other side, you see that the cave splits again. " +
                         "You can either take the left tunnel or the right tunnel.",
                 "Left Tunnel",
-                "Right Tunnel");
+                "Right Tunnel",
+                "null");
+        //TODO image
         storyHelper.firstChoice.onClick(this::leftTunnelBridge);
         storyHelper.secondChoice.onClick(this::rightTunnelBridge);
     }
@@ -35,7 +41,8 @@ public class LeftTunnelAlive {
                         "on the floor. You shine your light and see another one not too far ahead. Do you ignore " +
                         "the trail or follow it?",
                 "Ignore It",
-                "Follow It");
+                "Follow It",
+                "gold");
         storyHelper.firstChoice.onClick(this::ignoreIt);
         storyHelper.secondChoice.onClick(this::followIt);
     }
@@ -46,7 +53,8 @@ public class LeftTunnelAlive {
                         "your head on the way down. You awake surrounded by rats, who appear to be worshiping you. " +
                         "You live out the rest of your days as a rat monarch. GAME OVER",
                 "Restart",
-                "null");
+                "null",
+                "rat");
         restart();
     }
 
@@ -56,7 +64,8 @@ public class LeftTunnelAlive {
                         "you make out what appears to a massive grizzly bear. How did that get down here? " +
                         "You can either run past it or hide until it goes away.",
                 "Run",
-                "Hide");
+                "Hide",
+                "bear");
         storyHelper.firstChoice.onClick(this::run);
         storyHelper.secondChoice.onClick(this::hide);
     }
@@ -67,7 +76,8 @@ public class LeftTunnelAlive {
                         "You head down this new tunnel and come out into a room of treasure. You are immediately " +
                         "consumed by greed and a desire to remain with your treasure forever. GAME OVER",
                 "Restart",
-                "null");
+                "null",
+                "treasure");
         restart();
     }
 
@@ -76,7 +86,8 @@ public class LeftTunnelAlive {
                         "This idea sounded better in your head. You reach the other side of the cavern but " +
                         "the bear is hot on your heels. It catches you. GAME OVER",
                 "Restart",
-                "null");
+                "null",
+                "standing-bear");
         restart();
     }
 
@@ -86,7 +97,9 @@ public class LeftTunnelAlive {
                         "You move to the end of the cavern. You see a light up ahead of you or you can " +
                         "head towards a darker part of the cave.",
                 "Light",
-                "Dark");
+                "Dark",
+                "null");
+        //TODO image
         storyHelper.firstChoice.onClick(this::light);
         storyHelper.secondChoice.onClick(this::dark);
     }
@@ -96,7 +109,9 @@ public class LeftTunnelAlive {
                         "You think you can hear the sound of the ocean. You reach a dead end. Hanging from the " +
                         "ceiling is an old miner's light. You break down and cry, exhausted. GAME OVER",
                 "Restart",
+                "null",
                 "null");
+        //TODO image
         restart();
     }
 
@@ -105,7 +120,9 @@ public class LeftTunnelAlive {
                         "Maybe it's good advice though. You turn a corner and see the outside world for the " +
                         "first time. At the end of the cave opening is a rope. Do you want to climb up or down?",
                 "Climb Up",
-                "Climb Down");
+                "Climb Down",
+                "null");
+        //TODO image
         storyHelper.firstChoice.onClick(this::climbUp);
         storyHelper.secondChoice.onClick(this::climbDown);
     }
@@ -116,7 +133,9 @@ public class LeftTunnelAlive {
                         "scramble up the rest of the rope and pull yourself onto level ground. You look around " +
                         "and recognize the view. You go for runs here sometimes, you know your way home. YOU WIN",
                 "Restart",
+                "null",
                 "null");
+        //TODO image
         restart();
     }
 
@@ -126,7 +145,8 @@ public class LeftTunnelAlive {
                         "Using one last push of energy you try to climb up the rope. " +
                         "You aren't strong enough. GAME OVER",
                 "Restart",
-                "null");
+                "null",
+                "rocks");
         restart();
     }
 
@@ -135,7 +155,9 @@ public class LeftTunnelAlive {
                         "This is a good start, you must be close to the surface! The sewer water is flowing from " +
                         "left to right, do you want to go with the flow or against the flow?" ,
                 "With the Flow",
-                "Against the Flow");
+                "Against the Flow",
+                "null");
+        //TODO image
         storyHelper.firstChoice.onClick(this::withFlow);
         storyHelper.secondChoice.onClick(this::againstFlow);
     }
@@ -147,7 +169,9 @@ public class LeftTunnelAlive {
                         " You awake a couple of hours later, face-up on a beach even further away from home" +
                         " than when you first started. GAME OVER",
                 "Restart",
+                "null",
                 "null");
+        //TODO image
         restart();
     }
 
@@ -156,7 +180,9 @@ public class LeftTunnelAlive {
                 "You hear a gush of water flowing ahead of you and quickly duck into a doorway before it rushes " +
                 "past you. That was a close one. Do you want to try the door or keep going?",
                 "Try the Door",
-                "Keep Going");
+                "Keep Going",
+                "null");
+        //TODO image
         storyHelper.firstChoice.onClick(this::tryDoor);
         storyHelper.secondChoice.onClick(this::keepGoing);
     }
@@ -167,7 +193,9 @@ public class LeftTunnelAlive {
                         " You tumble down a hole, bumping your head on the way down. You awake surrounded by rats," +
                         " who appear to be worshiping you. You live out the rest of your days as a rat monarch. GAME OVER",
                 "Restart",
+                "null",
                 "null");
+        //TODO image
         restart();
     }
 
@@ -177,7 +205,9 @@ public class LeftTunnelAlive {
                 "It looks like one will open the door and one will sound an alarm. You just don't know " +
                 "which one does which. Top button or bottom button?",
                 "Top Button",
-                "Bottom Button");
+                "Bottom Button",
+                "null");
+        //TODO image
         storyHelper.firstChoice.onClick(this::topButton);
         storyHelper.secondChoice.onClick(this::bottomButton);
     }
@@ -188,7 +218,9 @@ public class LeftTunnelAlive {
                         "room and apprehend you. They take you to a holding cell. Who knows when you'll get " +
                         "home now. GAME OVER",
                 "Restart",
+                "null",
                 "null");
+        //TODO image
         restart();
     }
 
@@ -198,7 +230,9 @@ public class LeftTunnelAlive {
                 "But inside is just a closet. In the closet, you see a pen and a mop." +
                 " Which do you think will help you more?",
                 "Pen",
-                "Mop");
+                "Mop",
+                "null");
+        //TODO image
         storyHelper.firstChoice.onClick(this::pen);
         storyHelper.secondChoice.onClick(this::mop);
     }
@@ -209,7 +243,9 @@ public class LeftTunnelAlive {
                 "closet wall swing open. What kind of sewer is this? You head into the newly opened room and see " +
                 "a guard asleep in front of the stairs. Do you want to knock the guard out or sneak past them?",
                 "Knock Them Out",
-                "Sneak Past Them");
+                "Sneak Past Them",
+                "null");
+        //TODO image
         storyHelper.firstChoice.onClick(this::knockOut);
         storyHelper.secondChoice.onClick(this::sneak);
     }
@@ -218,7 +254,9 @@ public class LeftTunnelAlive {
         storyHelper.canvasHelper("You pick up the mop only to find that it is attached to the closet door. " +
                         "The floor underneath you collapses dropping you onto a bed of spikes. GAME OVER",
                 "Restart",
+                "null",
                 "null");
+        //TODO image
         restart();
     }
 
@@ -228,7 +266,9 @@ public class LeftTunnelAlive {
                         "You shut your eyes and swing down. You feel a strong hand catch your arm before you " +
                         "make contact. You know what happens next. GAME OVER",
                 "Restart",
+                "null",
                 "null");
+        //TODO image
         restart();
     }
 
@@ -239,7 +279,9 @@ public class LeftTunnelAlive {
                 "the top of the stairs and emerge onto the sidewalk. This is close to your house! " +
                 "You have escaped. YOU WIN",
                 "Restart",
+                "null",
                 "null");
+        //TODO image
         restart();
     }
 
