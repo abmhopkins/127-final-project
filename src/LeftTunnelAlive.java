@@ -16,8 +16,7 @@ public class LeftTunnelAlive {
                 "down from the ceiling. Do you want to cross the bridge or go up the ladder?",
                 "Across the Bridge",
                 "Up the Ladder",
-                "cave");
-
+                "null");
 
         storyHelper.firstChoice.onClick(this::bridge);
         storyHelper.secondChoice.onClick(this::ladder);
@@ -29,8 +28,7 @@ public class LeftTunnelAlive {
                         "You can either take the left tunnel or the right tunnel.",
                 "Left Tunnel",
                 "Right Tunnel",
-                "null");
-        //TODO image
+                "leftTunnelPhotos/cave.png");
         storyHelper.firstChoice.onClick(this::leftTunnelBridge);
         storyHelper.secondChoice.onClick(this::rightTunnelBridge);
     }
@@ -42,7 +40,7 @@ public class LeftTunnelAlive {
                         "the trail or follow it?",
                 "Ignore It",
                 "Follow It",
-                "gold");
+                "leftTunnelPhotos/gold.png");
         storyHelper.firstChoice.onClick(this::ignoreIt);
         storyHelper.secondChoice.onClick(this::followIt);
     }
@@ -54,7 +52,7 @@ public class LeftTunnelAlive {
                         "You live out the rest of your days as a rat monarch. GAME OVER",
                 "Restart",
                 "null",
-                "rat");
+                "leftTunnelPhotos/rats.png");
         restart();
     }
 
@@ -65,7 +63,7 @@ public class LeftTunnelAlive {
                         "You can either run past it or hide until it goes away.",
                 "Run",
                 "Hide",
-                "bear");
+                "leftTunnelPhotos/bear.png");
         storyHelper.firstChoice.onClick(this::run);
         storyHelper.secondChoice.onClick(this::hide);
     }
@@ -77,7 +75,7 @@ public class LeftTunnelAlive {
                         "consumed by greed and a desire to remain with your treasure forever. GAME OVER",
                 "Restart",
                 "null",
-                "treasure");
+                "leftTunnelPhotos/treasure.png");
         restart();
     }
 
@@ -87,7 +85,7 @@ public class LeftTunnelAlive {
                         "the bear is hot on your heels. It catches you. GAME OVER",
                 "Restart",
                 "null",
-                "standing-bear");
+                "leftTunnelPhotos/standing-bear.png");
         restart();
     }
 
@@ -98,8 +96,7 @@ public class LeftTunnelAlive {
                         "head towards a darker part of the cave.",
                 "Light",
                 "Dark",
-                "null");
-        //TODO image
+                "leftTunnelPhotos/light-dark.png");
         storyHelper.firstChoice.onClick(this::light);
         storyHelper.secondChoice.onClick(this::dark);
     }
@@ -110,8 +107,7 @@ public class LeftTunnelAlive {
                         "ceiling is an old miner's light. You break down and cry, exhausted. GAME OVER",
                 "Restart",
                 "null",
-                "null");
-        //TODO image
+                "leftTunnelPhotos/light.png");
         restart();
     }
 
@@ -121,8 +117,7 @@ public class LeftTunnelAlive {
                         "first time. At the end of the cave opening is a rope. Do you want to climb up or down?",
                 "Climb Up",
                 "Climb Down",
-                "null");
-        //TODO image
+                "leftTunnelPhotos/rope.png");
         storyHelper.firstChoice.onClick(this::climbUp);
         storyHelper.secondChoice.onClick(this::climbDown);
     }
@@ -134,8 +129,7 @@ public class LeftTunnelAlive {
                         "and recognize the view. You go for runs here sometimes, you know your way home. YOU WIN",
                 "Restart",
                 "null",
-                "null");
-        //TODO image
+                "leftTunnelPhotos/view.png");
         restart();
     }
 
@@ -146,7 +140,7 @@ public class LeftTunnelAlive {
                         "You aren't strong enough. GAME OVER",
                 "Restart",
                 "null",
-                "rocks");
+                "leftTunnelPhotos/rocks.png");
         restart();
     }
 
@@ -194,7 +188,7 @@ public class LeftTunnelAlive {
                         " who appear to be worshiping you. You live out the rest of your days as a rat monarch. GAME OVER",
                 "Restart",
                 "null",
-                "null");
+                "leftTunnelPhotos/rats.png");
         //TODO image
         restart();
     }
