@@ -9,6 +9,13 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * Functions that assist in the running and positioning of the game elements, the text, the canvas background
+ * and buttons.
+ * <p>
+ * Authors: Amrit Johal and Alexander Hopkins
+ * Original Work
+ */
 public class StoryHelper {
 
     private final int CANVAS_WIDTH;
@@ -25,12 +32,20 @@ public class StoryHelper {
         this.CANVAS_HEIGHT = canvas.getHeight();
     }
 
+    /**
+     * The canvas helper controls all the elements on the canvas and arranges them on the canvas.
+     *
+     * @param storyText the text of the story you want displayed
+     * @param choice1   the first choice you want displayed on the button
+     * @param choice2   the second choice you want displayed on the button
+     * @param imageName the path of the image you want displayed as the background
+     */
     public void canvasHelper(String storyText, String choice1, String choice2, String imageName){
-        // TODO add capabilities that change the background - most likely as another parameter
+        // TODO add rectangle for text
         canvas.removeAll();
         if(!imageName.equals("null")) {
             Image image = new Image(0, 0);
-            image.setImagePath(imageName + ".png");
+            image.setImagePath(imageName);
             canvas.add(image);
         }
 
@@ -49,6 +64,14 @@ public class StoryHelper {
         }
     }
 
+
+    /**
+     * Creates a series of GraphicsText objects that are a specified number of words long.
+     * First splits the text and converts the resulting array to a list, then loops through
+     * the list adding labels to the canvas as necessary giving the impression of wrapping text
+     *
+     * @param text the text of the story you want displayed
+     */
     public void wrapText(String text){
         List<String> words = new ArrayList<>(Arrays.asList(text.split("\\s+")));
         int length = words.size();
