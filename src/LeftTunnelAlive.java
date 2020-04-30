@@ -147,7 +147,7 @@ public class LeftTunnelAlive {
     private void ladder(){
         storyHelper.canvasHelper("You climb the ladder and find yourself on the edge of a sewer pipe." +
                         "This is a good start, you must be close to the surface! The sewer water is flowing from " +
-                        "left to right, do you want to go with the flow or against the flow?" ,
+                        "right to left, do you want to go with the flow or against the flow?" ,
                 "With the Flow",
                 "Against the Flow",
                 "null");
