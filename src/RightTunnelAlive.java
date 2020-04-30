@@ -13,9 +13,7 @@ public class RightTunnelAlive {
         storyHelper.canvasHelper("You've just entered through the right cave and you see a wide underground river." +
                         " Do you want to swim across or find another way?",
                 "Swim Across",
-                "Find Another Way",
-                "null");
-        //TODO image
+                "Find Another Way", "rightTunnelPhotos/rightTunnelPic.png");
         storyHelper.firstChoice.onClick(this::swimAcross);
         storyHelper.secondChoice.onClick(this::findAnotherWay);
     }
@@ -24,8 +22,7 @@ public class RightTunnelAlive {
                         "Do you check underwater or keep swimming?. ",
                 "Check Underwater",
                 "Keep Swimming",
-                "null");
-        //TODO image
+                "rightTunnelPhotos/swimAcrossPic.png");
         storyHelper.firstChoice.onClick(this::checkUnderwater);
         storyHelper.secondChoice.onClick(this::keepSwimming);
     }
@@ -34,8 +31,7 @@ public class RightTunnelAlive {
                         "Now you're...sleeping with the fishes.",
                 "Restart",
                 "null",
-                "null");
-        //TODO image
+                "rightTunnelPhotos/keepSwimmingPic.png");
         restart();
     }
     private void checkUnderwater(){
@@ -43,8 +39,7 @@ public class RightTunnelAlive {
                         "THEY LOOK HUNGRY. " + "Do you swim faster or play dead?",
                 "Swim Faster",
                 "Play Dead",
-                "null");
-        //TODO image
+                "rightTunnelPhotos/checkUnderwaterPic.png");
         storyHelper.firstChoice.onClick(this::swimFaster);
         storyHelper.secondChoice.onClick(this::playDead);
     }
@@ -53,18 +48,16 @@ public class RightTunnelAlive {
                         "Playing dead may have worked with a bear, but now you're not playing dead anymore. " + "YOU ARE DEAD.",
                 "Restart",
                 "null",
-                "null");
-        //TODO image
+                "rightTunnelPhotos/playDeadPic.png");
         restart();
     }
     private void swimFaster(){
         storyHelper.canvasHelper("People used to make fun of you for taking water aerobics at the local YMCA, but they're laughing now.  " +
                         "ou're out swimming the piranhas and suddenly they've stopped. Why? " + "Well it's because you've been swept by a strong current!! What are you gonna do? " +
-                "Fight it or let it take you?",
+                        "Fight it or let it take you?",
                 "Flow with",
                 "Fight it",
-                "null");
-        //TODO image
+                "rightTunnelPhotos/swimFasterPic.png");
         storyHelper.firstChoice.onClick(this::flowWithCurrent);
         storyHelper.secondChoice.onClick(this::fightCurrent);
     }
@@ -73,8 +66,7 @@ public class RightTunnelAlive {
                         "You've tired yourself out and collapsed. You probably should have had breakfast. ",
                 "Restart",
                 "null",
-                "null");
-        //TODO image
+                "rightTunnelPhotos/fightCurrentPic.png");
         restart();
     }
     private void flowWithCurrent(){
@@ -82,19 +74,17 @@ public class RightTunnelAlive {
                         "You begin to hear a roaring noise and feel your gut wrench. It's a waterfall. " + "You see a tree branch or a rock that could stop you from falling what do you do? ",
                 "Grab Branch",
                 "Grab Rock",
-                "null");
-        //TODO image
+                "rightTunnelPhotos/flowWithCurrentPic.png");
         storyHelper.firstChoice.onClick(this::grabBranch);
         storyHelper.secondChoice.onClick(this::grabRock);
     }
     private void grabRock(){
-        storyHelper.canvasHelper("ou grab the rock but the water makes it to slippery to hold on.  " +
+        storyHelper.canvasHelper("You grab the rock but the water makes it to slippery to hold on.  " +
                         "You get closer and closer to the edge of the waterfall until you finally fall over. " +
                         "You probably should have worn a life jacket. ",
                 "Restart",
                 "null",
-                "null");
-        //TODO image
+                "rightTunnelPhotos/grabRockPic.png");
         restart();
     }
     private void grabBranch(){
@@ -102,8 +92,7 @@ public class RightTunnelAlive {
                         "As you pull yourself toward the earth you see a light. You're freezing from the water. ",
                 "Follow Light",
                 "Stay by Water",
-                "null");
-        //TODO image
+                "rightTunnelPhotos/grabBranchPic.png");
         storyHelper.firstChoice.onClick(this::followLight);
         storyHelper.secondChoice.onClick(this::stayWithWater);
     }
@@ -112,8 +101,7 @@ public class RightTunnelAlive {
                         "Grandma is making cookies and you're right on time. ",
                 "Restart",
                 "null",
-                "null");
-        //TODO image
+                "rightTunnelPhotos/followLightPic.png");
         restart();
     }
     private void stayWithWater(){
@@ -121,8 +109,7 @@ public class RightTunnelAlive {
                         "You decided to take nap but never wake up.",
                 "Restart",
                 "null",
-                "null");
-        //TODO image
+                "rightTunnelPhotos/stayWithWaterPic.png");
         restart();
     }
 
@@ -132,40 +119,36 @@ public class RightTunnelAlive {
                         "Where do you go?",
                 "Follow Birds",
                 "Wooden Path",
-                "null");
-        //TODO image
+                "rightTunnelPhotos/findAnotherWayPic.png");
         storyHelper.firstChoice.onClick(this::followBirds);
         storyHelper.secondChoice.onClick(this::woodenPath);
     }
     private void followBirds(){
         storyHelper.canvasHelper("While you follow the birds you hear they're chirping and singing.  " +
                         "You're whistling with them when you realize you're feeling dizzy. " + "It turns out the birds were used by miners to detect CO2." +
-                "It seems you just carbon monoxDIED.",
+                        "It seems you just carbon monoxDIED.",
                 "Restart",
                 "null",
-                "null");
-        //TODO image
+                "rightTunnelPhotos/followBirdsPic.png");
         restart();
     }
     private void woodenPath(){
         storyHelper.canvasHelper("As you're walking down the path you begin to see a light.  " +
                         "You quint and begin to wonder what it is. " + "When you get closer you realize it's a small golden statue. " +
-                "It doesn't belong to you, but who would miss it?",
+                        "It doesn't belong to you, but who would miss it?",
                 "Grab Statue",
                 "Look for Clues",
-                "null");
-        //TODO image
+                "rightTunnelPhotos/woodenPathPic.png");
         storyHelper.firstChoice.onClick(this::grabStatue);
         storyHelper.secondChoice.onClick(this::lookForClues);
     }
     private void grabStatue(){
         storyHelper.canvasHelper("You grab the statue only to realize you've triggered a trap. " +
-                        "Water starts to fill the room and the doors get locked. " + "Even snakes would have been better with this." +
-                        "Hopefully you can hold your breath for a long long time.",
+                        "The doors get locked. " + "Snakes start to appear" +
+                        "Hopefully they're not poisonous",
                 "Restart",
                 "null",
-                "null");
-        //TODO image
+                "rightTunnelPhotos/grabStatuePic.png");
         restart();
     }
     private void lookForClues(){
@@ -173,8 +156,7 @@ public class RightTunnelAlive {
                         "You see a mine cart do you get in it or take a smoke break? ",
                 "Smoke",
                 "Get in Cart",
-                "null");
-        //TODO image
+                "rightTunnelPhotos/lookForCluesPic.png");
         storyHelper.firstChoice.onClick(this::startSmoking);
         storyHelper.secondChoice.onClick(this::getInCart);
     }
@@ -183,8 +165,7 @@ public class RightTunnelAlive {
                         "When you dump your ashes you realize you lit some dynamite by accident. " + "People always said smoking will kill you, but not like this.",
                 "Restart",
                 "null",
-                "null");
-        //TODO image
+                "rightTunnelPhotos/startSmokingPic.png");
         restart();
     }
     private void getInCart(){
@@ -192,49 +173,44 @@ public class RightTunnelAlive {
                         "You're flying past path after path. " + "You decide you need to choose a path to stop this decent.",
                 "Push Lever",
                 "Pull Lever",
-                "null");
-        //TODO image
+                "rightTunnelPhotos/getInCartPic.png");
         storyHelper.firstChoice.onClick(this::pushLever);
         storyHelper.secondChoice.onClick(this::pullLever);
     }
     private void pushLever(){
-        storyHelper.canvasHelper("You pushed the lever and your cart veers to the left. " +
-                        " You're headed straight for a wall. Now you know how Wile E Coyote felt.",
+        storyHelper.canvasHelper("You pushed the lever and your handle breaks. " +
+                        "You're headed straight for lava. You should have brought some marshmallows",
                 "Restart",
                 "null",
-                "null");
-        //TODO image
+                "rightTunnelPhotos/pushLeverPic.png");
         restart();
     }
     private void pullLever(){
         storyHelper.canvasHelper("You pull the lever and veer to the right. " +
                         "You're headed down a path and you're getting faster and faster. " + "You must be going at least 50mph. " +
-                "You see penny in the cart. It's shiny.",
+                        "You see penny in the cart. It's shiny.",
                 "Keep Going",
                 "Grab Penny",
-                "null");
-        //TODO image
+                "rightTunnelPhotos/pullLeverPic.png");
         storyHelper.firstChoice.onClick(this::keepGoing);
         storyHelper.secondChoice.onClick(this::grabPenny);
     }
     private void keepGoing(){
         storyHelper.canvasHelper("You're going so fast your eyes are watering. " +
                         "You keep looking forward and BOOM." + "You hit your forehead on a caution sign and get a coma." +
-                "There was no real heads up for that one. ",
+                        "There was no real heads up for that one. ",
                 "Restart",
                 "null",
-                "null");
-        //TODO image
+                "rightTunnelPhotos/keepGoingPic.png");
         restart();
     }
     private void grabPenny(){
         storyHelper.canvasHelper("You reach down and grab the penny just in time to miss hitting your head. " +
                         "You keep going and fly off a ramp. " + "You've landed on a beach just in time for your friends birthday party. " +
-                "You think it's finally time for a drink.",
+                        "You think it's finally time for a drink.",
                 "Restart",
                 "null",
-                "null");
-        //TODO image
+                "rightTunnelPhotos/grabPennyPic.png");
         restart();
     }
     public void restart(){
