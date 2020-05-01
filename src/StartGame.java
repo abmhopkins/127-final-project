@@ -16,19 +16,18 @@ public class StartGame {
         storyHelper.canvasHelper("You awake in a dark room. What do you want to do: Feel Around or Do Nothing?",
                 "Feel Around",
                 "Do Nothing",
-                "null");
+                "startGamePhotos/dark-floor.png");
         //TODO image
         storyHelper.firstChoice.onClick(this::feelAround);
         storyHelper.secondChoice.onClick(this::doNothing);
     }
 
     private void feelAround(){
-        storyHelper.canvasHelper("You feel the ground around you. You find a backpack and a flashlight. " +
-                        "Do you want to turn on the flashlight or check your backpack?",
+        storyHelper.canvasHelper("You feel the ground around you. You find a flashlight. " +
+                        "Do you want to turn on the flashlight?",
                 "Flashlight",
-                "Backpack",
-                "null");
-        //TODO image
+                "null",
+                "startGamePhotos/flashlight.png");
         storyHelper.firstChoice.onClick(this::flashlight);
 //        secondChoice.onClick();
     }
@@ -37,8 +36,7 @@ public class StartGame {
         storyHelper.canvasHelper("You sit there on the cold dark floor and do nothing. That wasn't much fun was it?",
                 "Restart",
                 "null",
-                "null");
-        //TODO image
+                "startGamePhotos/dark-floor.png");
         storyHelper.firstChoice.onClick(this::startGame);
     }
 
@@ -48,8 +46,7 @@ public class StartGame {
                         "tunnel and a right tunnel.",
                 "Left Tunnel",
                 "Right Tunnel",
-                "null");
-        //TODO image
+                "startGamePhotos/options.png");
         storyHelper.firstChoice.onClick(leftTunnel::leftTunnel);
         storyHelper.secondChoice.onClick(rightTunnel::rightTunnel);
     }
