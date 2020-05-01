@@ -1,27 +1,46 @@
 import comp127graphics.CanvasWindow;
 import comp127graphics.Image;
 
+/**
+ * This class contains all the story lines for the left tunnel
+ * <p>
+ * Author: Alexander Hopkins
+ * Original Work
+ */
 public class LeftTunnelAlive {
 
     private StoryHelper storyHelper;
     private CanvasWindow canvas;
 
+    /**
+     * Creates a LeftTunnelAlive object.
+     *
+     * @param canvas A canvas window object that is used to initialize the StoryHelper object
+     */
     LeftTunnelAlive(CanvasWindow canvas){
         this.canvas = canvas;
         this.storyHelper = new StoryHelper(canvas);
     }
 
+    /**
+     * Displays the initial left tunnel story. Links to the bridge and ladder methods.
+     *
+     */
     public void leftTunnel(){
         storyHelper.canvasHelper("You choose the left tunnel. Up ahead you see a rope bridge and a rope ladder hanging " +
                 "down from the ceiling. Do you want to cross the bridge or go up the ladder?",
                 "Across the Bridge",
                 "Up the Ladder",
-                "null");
+                "leftTunnelPhotos/decision-cave.png");
 
         storyHelper.firstChoice.onClick(this::bridge);
         storyHelper.secondChoice.onClick(this::ladder);
     }
 
+    /**
+     * Displays the bridge story. Links to the leftTunnelBridge and rightTunnelBridge methods.
+     *
+     */
     private void bridge(){
         storyHelper.canvasHelper("You cross the rickety old rope bridge carefully and make it to the other side. " +
                         "Now on the other side, you see that the cave splits again. " +
@@ -33,6 +52,10 @@ public class LeftTunnelAlive {
         storyHelper.secondChoice.onClick(this::rightTunnelBridge);
     }
 
+    /**
+     * Displays the leftTunnelBridge story. Links to the ignoreIt and followIt method.
+     *
+     */
     private void leftTunnelBridge(){
         storyHelper.canvasHelper("You start heading down the tunnel to your left when a glint catches " +
                         "your eye. You head over to examine it some closer and see a little piece of gold lying " +
@@ -45,6 +68,10 @@ public class LeftTunnelAlive {
         storyHelper.secondChoice.onClick(this::followIt);
     }
 
+    /**
+     * Displays the rightTunnelBridge story. This is a dead-end storyline. Gives you the option to restart
+     *
+     */
     private void rightTunnelBridge(){
         storyHelper.canvasHelper("You head down the tunnel on your right. Your flashlight begins to " +
                         "flicker and you briefly can't see your surroundings. You tumble down a hole, bumping " +
@@ -56,6 +83,10 @@ public class LeftTunnelAlive {
         restart();
     }
 
+    /**
+     * Displays the ignoreIt story. Links to the run and hide methods.
+     *
+     */
     private void ignoreIt(){
         storyHelper.canvasHelper("You ignore the gold pieces. They were probably fake anyway. " +
                         "You keep walking in the cave until you stop dead in your tracks. In front of you, " +
@@ -68,6 +99,10 @@ public class LeftTunnelAlive {
         storyHelper.secondChoice.onClick(this::hide);
     }
 
+    /**
+     * Displays the followIt story. This is a dead-end storyline. Gives you the option to restart
+     *
+     */
     private void followIt(){
         storyHelper.canvasHelper("You decide to follow the pieces of gold, picking them up as you go. " +
                         "The pieces lead you to a section of the cave that you never would have stumbled onto. " +
@@ -79,6 +114,10 @@ public class LeftTunnelAlive {
         restart();
     }
 
+    /**
+     * Displays the run story. This is a dead-end storyline. Gives you the option to restart
+     *
+     */
     private void run(){
         storyHelper.canvasHelper("You decide to try and run past the bear. " +
                         "This idea sounded better in your head. You reach the other side of the cavern but " +
@@ -89,6 +128,10 @@ public class LeftTunnelAlive {
         restart();
     }
 
+    /**
+     * Displays the hide story. Links to the light and dark methods.
+     *
+     */
     private void hide(){
         storyHelper.canvasHelper("You hide behind a rock and wait for the bear to move on. " +
                         "After about 20 minutes it scampers the way you just came and out of sight. " +
@@ -101,6 +144,10 @@ public class LeftTunnelAlive {
         storyHelper.secondChoice.onClick(this::dark);
     }
 
+    /**
+     * Displays the light story. This is a dead-end storyline. Gives you the option to restart
+     *
+     */
     private void light(){
         storyHelper.canvasHelper("You break into a jog as you think you are close to the exit. " +
                         "You think you can hear the sound of the ocean. You reach a dead end. Hanging from the " +
@@ -111,6 +158,10 @@ public class LeftTunnelAlive {
         restart();
     }
 
+    /**
+     * Displays the dark story. Links to the climbUp and climbDown methods.
+     *
+     */
     private void dark(){
         storyHelper.canvasHelper("Interesting choice. \"Head towards the dark.\" Never heard that before. " +
                         "Maybe it's good advice though. You turn a corner and see the outside world for the " +
@@ -122,6 +173,10 @@ public class LeftTunnelAlive {
         storyHelper.secondChoice.onClick(this::climbDown);
     }
 
+    /**
+     * Displays the climbUp story. This is a dead-end storyline. Gives you the option to restart
+     *
+     */
     private void climbUp(){
         storyHelper.canvasHelper("You start to climb up the rope. It clearly has not been used for a " +
                         "long time and you see it begin to fray under your weight. Fearing for your life, you " +
@@ -133,6 +188,10 @@ public class LeftTunnelAlive {
         restart();
     }
 
+    /**
+     * Displays the climbDown story. This is a dead-end storyline. Gives you the option to restart
+     *
+     */
     private void climbDown(){
         storyHelper.canvasHelper("You start to repel down. About 10 meters down, your feet no longer " +
                         "feel the rope. You look down and see that the rope ends well before the ground does. " +
@@ -144,18 +203,25 @@ public class LeftTunnelAlive {
         restart();
     }
 
+    /**
+     * Displays the ladder story. Links to the withFlow and againstFlow methods.
+     *
+     */
     private void ladder(){
         storyHelper.canvasHelper("You climb the ladder and find yourself on the edge of a sewer pipe." +
                         "This is a good start, you must be close to the surface! The sewer water is flowing from " +
                         "right to left, do you want to go with the flow or against the flow?" ,
                 "With the Flow",
                 "Against the Flow",
-                "null");
-        //TODO image
+                "leftTunnelPhotos/sewer.png");
         storyHelper.firstChoice.onClick(this::withFlow);
         storyHelper.secondChoice.onClick(this::againstFlow);
     }
 
+    /**
+     * Displays the withFlow story. This is a dead-end storyline. Gives you the option to restart
+     *
+     */
     public void withFlow(){
         storyHelper.canvasHelper("You walk forward 100 meters and see a sewer grate not far in front of you." +
                         " From behind you hear the roar of water. You turn just in time for it to hit you square" +
@@ -164,23 +230,29 @@ public class LeftTunnelAlive {
                         " than when you first started. GAME OVER",
                 "Restart",
                 "null",
-                "null");
-        //TODO image
+                "leftTunnelPhotos/beach.png");
         restart();
     }
 
+    /**
+     * Displays the againstFlow story. Links to the tryDoor and keepGoing methods.
+     *
+     */
     private void againstFlow(){
         storyHelper.canvasHelper("You start walking towards the source of the water, wherever that may be. " +
                 "You hear a gush of water flowing ahead of you and quickly duck into a doorway before it rushes " +
                 "past you. That was a close one. Do you want to try the door or keep going?",
                 "Try the Door",
                 "Keep Going",
-                "null");
-        //TODO image
+                "leftTunnelPhotos/door.png");
         storyHelper.firstChoice.onClick(this::tryDoor);
         storyHelper.secondChoice.onClick(this::keepGoing);
     }
 
+    /**
+     * Displays the keepGoing story. This is a dead-end storyline. Gives you the option to restart
+     *
+     */
     public void keepGoing(){
         storyHelper.canvasHelper("You step out of the doorway and keep heading towards the source of the" +
                         " water. Your flashlight begins to flicker and you briefly can't see your surroundings." +
@@ -189,10 +261,13 @@ public class LeftTunnelAlive {
                 "Restart",
                 "null",
                 "leftTunnelPhotos/rats.png");
-        //TODO image
         restart();
     }
 
+    /**
+     * Displays the tryDoor story. Links to the topButton and bottomButton methods.
+     *
+     */
     private void tryDoor(){
         storyHelper.canvasHelper("You try the door and it swings open. That's weird. It appears to be a " +
                 "control room of sorts. There's another door up ahead of you. Next to the door are two buttons. " +
@@ -200,12 +275,15 @@ public class LeftTunnelAlive {
                 "which one does which. Top button or bottom button?",
                 "Top Button",
                 "Bottom Button",
-                "null");
-        //TODO image
+                "leftTunnelPhotos/control-room.png");
         storyHelper.firstChoice.onClick(this::topButton);
         storyHelper.secondChoice.onClick(this::bottomButton);
     }
 
+    /**
+     * Displays the topButton story. This is a dead-end storyline. Gives you the option to restart
+     *
+     */
     public void topButton(){
         storyHelper.canvasHelper("You press the top button and wait for the door to slide open. " +
                         "Instead, you are deafened by the screeching alarm. Within seconds, guards swarm into the " +
@@ -213,11 +291,14 @@ public class LeftTunnelAlive {
                         "home now. GAME OVER",
                 "Restart",
                 "null",
-                "null");
-        //TODO image
+                "leftTunnelPhotos/alarm.png");
         restart();
     }
 
+    /**
+     * Displays the bottomButton story. Links to the pen and mop methods.
+     *
+     */
     private void bottomButton(){
         storyHelper.canvasHelper("You press the bottom button and brace yourself for the alarm. " +
                 "Instead, you are greeted with the comforting wooshing of the automatic door sliding open. " +
@@ -225,12 +306,15 @@ public class LeftTunnelAlive {
                 " Which do you think will help you more?",
                 "Pen",
                 "Mop",
-                "null");
-        //TODO image
+                "leftTunnelPhotos/closet.png");
         storyHelper.firstChoice.onClick(this::pen);
         storyHelper.secondChoice.onClick(this::mop);
     }
 
+    /**
+     * Displays the pen story. Links to the knockOut and sneak methods.
+     *
+     */
     private void pen(){
         storyHelper.canvasHelper("The pen huh? Interesting choice. You pick it up. It looks normal enough. " +
                 "You can't stop yourself from giving it a couple of clicks. After the third click, you see the " +
@@ -238,22 +322,28 @@ public class LeftTunnelAlive {
                 "a guard asleep in front of the stairs. Do you want to knock the guard out or sneak past them?",
                 "Knock Them Out",
                 "Sneak Past Them",
-                "null");
-        //TODO image
+                "leftTunnelPhotos/guard.png");
         storyHelper.firstChoice.onClick(this::knockOut);
         storyHelper.secondChoice.onClick(this::sneak);
     }
 
+    /**
+     * Displays the mop story. This is a dead-end storyline. Gives you the option to restart
+     *
+     */
     public void mop(){
         storyHelper.canvasHelper("You pick up the mop only to find that it is attached to the closet door. " +
                         "The floor underneath you collapses dropping you onto a bed of spikes. GAME OVER",
                 "Restart",
                 "null",
-                "null");
-        //TODO image
+                "leftTunnelPhotos/hole.png");
         restart();
     }
 
+    /**
+     * Displays the knockOut story. This is a dead-end storyline. Gives you the option to restart
+     *
+     */
     public void knockOut(){
         storyHelper.canvasHelper("You grab a wrench off the floor and walk over to the guard, hoping to " +
                         "knock them out. You stand over the sleeping guard and hold the wrench over your head. " +
@@ -261,11 +351,14 @@ public class LeftTunnelAlive {
                         "make contact. You know what happens next. GAME OVER",
                 "Restart",
                 "null",
-                "null");
-        //TODO image
+                "leftTunnelPhotos/knockOut.png");
         restart();
     }
 
+    /**
+     * Displays the sneak story. This is a dead-end storyline. Gives you the option to restart
+     *
+     */
     private void sneak() {
         storyHelper.canvasHelper("The guard looks like they are fast asleep, you could probably sneak " +
                 "past them and up the stairs fairly easily. You reach the top of the stairs before you hear the " +
@@ -274,11 +367,14 @@ public class LeftTunnelAlive {
                 "You have escaped. YOU WIN",
                 "Restart",
                 "null",
-                "null");
-        //TODO image
+                "leftTunnelPhotos/sidewalk.png");
         restart();
     }
 
+    /**
+     * Restarts the game. Creates a StartGame object and starts the game again.
+     *
+     */
     public void restart(){
         StartGame startGame = new StartGame(canvas);
         storyHelper.firstChoice.onClick(startGame::startGame);
