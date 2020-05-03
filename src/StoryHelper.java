@@ -1,7 +1,6 @@
-import comp127graphics.CanvasWindow;
-import comp127graphics.FontStyle;
-import comp127graphics.GraphicsText;
+import comp127graphics.*;
 import comp127graphics.Image;
+import comp127graphics.Rectangle;
 import comp127graphics.ui.Button;
 
 import java.awt.*;
@@ -21,8 +20,10 @@ public class StoryHelper {
     private final int CANVAS_WIDTH;
     private final int CANVAS_HEIGHT;
     private final int LENGTH_WORDS = 15;
+    private final int TEXTBOX_WIDTH = 660;
 
     private CanvasWindow canvas;
+    private Rectangle rectangle;
     public Button firstChoice;
     public Button secondChoice;
 
@@ -41,13 +42,20 @@ public class StoryHelper {
      * @param imageName the path of the image you want displayed as the background
      */
     public void canvasHelper(String storyText, String choice1, String choice2, String imageName){
-        // TODO add rectangle for text
         canvas.removeAll();
         if(!imageName.equals("null")) {
             Image image = new Image(0, 0);
             image.setImagePath(imageName);
             canvas.add(image);
         }
+
+        rectangle = new Rectangle(0,0,TEXTBOX_WIDTH,110);
+        rectangle.setCenter(CANVAS_WIDTH*0.5, CANVAS_HEIGHT*0.33);
+        rectangle.setFillColor(Color.LIGHT_GRAY);
+        rectangle.setStrokeColor(Color.LIGHT_GRAY);
+        rectangle.setFilled(true);
+        canvas.add(rectangle);
+
 
         wrapText(storyText);
 
@@ -70,15 +78,18 @@ public class StoryHelper {
      * First splits the text and converts the resulting array to a list, then loops through
      * the list adding labels to the canvas as necessary giving the impression of wrapping text
      *
+     * Updates the height of the text box
+     *
      * @param text the text of the story you want displayed
      */
     public void wrapText(String text){
-        List<String> words = new ArrayList<>(Arrays.asList(text.split("\\s+")));
+        List<String> words = new ArrayList<>(Arrays.asList(text.split("\\s+"))); //separates the text into a list, keeps punctuation
         int length = words.size();
         if(length > LENGTH_WORDS){
-            int rows = (length/LENGTH_WORDS) + 1;
+            int rows = (length/LENGTH_WORDS) + 1;   //Calculates the number of rows of text required
+            rectangle.setSize(TEXTBOX_WIDTH, 25*rows); //Changes the height of the text rectangle depending on the rows of text
             for (int i = 0; i < rows; i++) {
-                double y = CANVAS_HEIGHT * (0.28 + i * 0.05);
+                double y = CANVAS_HEIGHT * (0.25 + i * 0.05);
                 String story = "";
                 for (int j = i * LENGTH_WORDS; j < (LENGTH_WORDS) + i*LENGTH_WORDS; j++) {
                     if(j < length) {
@@ -86,7 +97,7 @@ public class StoryHelper {
                     }
                 }
                 GraphicsText label = new GraphicsText(story);
-                label.setCenter(CANVAS_WIDTH * 0.5, y);
+                label.setCenter(CANVAS_WIDTH * 0.48, y);
                 label.setFont(FontStyle.BOLD, 14);
                 label.setFillColor(Color.RED);
                 canvas.add(label);

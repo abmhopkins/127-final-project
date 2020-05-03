@@ -163,8 +163,8 @@ public class LeftTunnelAlive {
      *
      */
     private void dark(){
-        storyHelper.canvasHelper("Interesting choice. \"Head towards the dark.\" Never heard that before. " +
-                        "Maybe it's good advice though. You turn a corner and see the outside world for the " +
+        storyHelper.canvasHelper("Interesting choice. \"Head towards the dark.\" I've never heard that before. " +
+                        "Maybe it is good advice though. You turn a corner and see the outside world for the " +
                         "first time. At the end of the cave opening is a rope. Do you want to climb up or down?",
                 "Climb Up",
                 "Climb Down",
@@ -181,7 +181,7 @@ public class LeftTunnelAlive {
         storyHelper.canvasHelper("You start to climb up the rope. It clearly has not been used for a " +
                         "long time and you see it begin to fray under your weight. Fearing for your life, you " +
                         "scramble up the rest of the rope and pull yourself onto level ground. You look around " +
-                        "and recognize the view. You go for runs here sometimes, you know your way home. YOU WIN",
+                        "and recognize the view, you know your way home. YOU WIN",
                 "Restart",
                 "null",
                 "leftTunnelPhotos/view.png");
