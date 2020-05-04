@@ -20,7 +20,7 @@ public class StoryHelper {
     private final int CANVAS_WIDTH;
     private final int CANVAS_HEIGHT;
     private final int LENGTH_WORDS = 15;
-    private final int TEXTBOX_WIDTH = 660;
+    private final int TEXTBOX_WIDTH = 670;
 
     private CanvasWindow canvas;
     private Rectangle rectangle;

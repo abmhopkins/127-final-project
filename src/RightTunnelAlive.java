@@ -66,9 +66,8 @@ public class RightTunnelAlive {
     }
     //The scene where the user chooses to swim faster
     private void swimFaster(){
-        storyHelper.canvasHelper("People used to make fun of you for taking water aerobics at the local YMCA, but they're laughing now.  " +
-                        "ou're out swimming the piranhas and suddenly they've stopped. Why? " + "Well it's because you've been swept by a strong current!! What are you gonna do? " +
-                        "Fight it or let it take you?",
+        storyHelper.canvasHelper("People used to make fun of you for taking water aerobics at your local YMCA, but not anymore. " +
+                        "The piranhas have suddenly stopped. " + "A currents swepted you! What now? " ,
                 "Flow with",
                 "Fight it",
                 "rightTunnelPhotos/swimFasterPic.png");
@@ -145,9 +144,9 @@ public class RightTunnelAlive {
     }
     //The scene where the user chooses to follow the birds
     private void followBirds(){
-        storyHelper.canvasHelper("While you follow the birds you hear they're chirping and singing.  " +
-                        "You're whistling with them when you realize you're feeling dizzy. " + "It turns out the birds were used by miners to detect CO2." +
-                        "It seems you just carbon monoxDIED.",
+        storyHelper.canvasHelper("You follow the birds and hear their chirping and singing. " +
+                        "You're whistling with until you realize you're feeling dizzy. " + " It turns out the birds were used by miners to detect CO2. " +
+                        "You just carbon monoxDIED.",
                 "Restart",
                 "null",
                 "rightTunnelPhotos/followBirdsPic.png");
