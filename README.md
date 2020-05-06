@@ -1,6 +1,7 @@
 # 127-final-project - Cave Escape
 
 A choose your own adventure game.
+Created by Alexander Hopkins and Amrit Johal.
 
 ## Instructions
 
@@ -31,4 +32,8 @@ To solve this anticipated problem we instead have methods for each story, which 
 buttons. This removes much of the clutter that we had anticipated.
 
 ## Extra Implementations
+
+Given a little more time and expertise, one of the things we would have liked to implement is 
+making the canvas more interactive. Instead of buttons we would have liked users to click on 
+different canvas elements, such as the flashlight, to advance the story.
 
